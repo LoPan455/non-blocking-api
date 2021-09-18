@@ -1,4 +1,4 @@
-package io.tjohander.fakeapistarter.model
+package io.tjohander.nonblockingapi.model
 
 data class Address(
     val street: String? = null,

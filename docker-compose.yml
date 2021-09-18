@@ -1,0 +1,25 @@
+version: "3.5"
+
+services:
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    networks:
+      - dev
+    restart: on-failure
+
+  mongo-seed:
+    container_name: mongo-seed
+    build: ./mongo-seed
+    networks:
+      - dev
+    depends_on:
+      - mongo
+    restart: on-failure
+
+networks:
+  dev:
+    name: dev
+    driver: bridge

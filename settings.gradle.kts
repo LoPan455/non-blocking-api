@@ -1,1 +1,1 @@
-rootProject.name = "fake-api-starter"
+rootProject.name = "non-blocking-api"

@@ -1,10 +1,10 @@
-package io.tjohander.fakeapistarter
+package io.tjohander.nonblockingapi
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class FakeApiStarterApplicationTests {
+class NonBlockingApiApplicationTests {
 
     @Test
     fun contextLoads() {

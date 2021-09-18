@@ -1,2 +1,8 @@
+spring:
+  data:
+    mongodb:
+      database: nonblockingapi
+      uri: mongodb://localhost:27017
+
 api:
   base-url: https://jsonplaceholder.typicode.com/
