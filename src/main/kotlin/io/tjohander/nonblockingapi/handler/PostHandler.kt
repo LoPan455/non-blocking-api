@@ -2,7 +2,6 @@ package io.tjohander.nonblockingapi.handler
 
 import io.tjohander.nonblockingapi.model.Post
 import io.tjohander.nonblockingapi.service.PostService
-import kotlinx.coroutines.flow.Flow
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.core.ParameterizedTypeReference
 import org.springframework.http.MediaType
@@ -11,9 +10,6 @@ import org.springframework.web.reactive.function.client.WebClient
 import org.springframework.web.reactive.function.server.ServerRequest
 import org.springframework.web.reactive.function.server.ServerResponse
 import org.springframework.web.reactive.function.server.ServerResponse.ok
-import org.springframework.web.reactive.function.server.bodyAndAwait
-import org.springframework.web.reactive.function.server.bodyValueAndAwait
-import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 @Component

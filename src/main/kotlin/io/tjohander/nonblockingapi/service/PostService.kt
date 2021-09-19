@@ -1,8 +1,7 @@
 package io.tjohander.nonblockingapi.service
 
-import io.tjohander.nonblockingapi.controller.PostSource
+import io.tjohander.nonblockingapi.enum.DataSource
 import io.tjohander.nonblockingapi.model.Post
-import io.tjohander.nonblockingapi.model.PostList
 import io.tjohander.nonblockingapi.repository.PostRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.core.ParameterizedTypeReference
@@ -10,17 +9,16 @@ import org.springframework.http.MediaType
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.client.WebClient
 import reactor.core.publisher.Flux
-import reactor.core.publisher.Mono
 
 @Service
 class PostService(
     @Autowired private val apiClient: WebClient,
     @Autowired private val postRepository: PostRepository
 ) {
-    fun getPosts(source: PostSource): Flux<Post> {
+    fun getPosts(source: DataSource): Flux<Post> {
         return when (source) {
-            PostSource.API -> getPostsFromApi()
-            PostSource.DB -> getPostsFromDb()
+            DataSource.API -> getPostsFromApi()
+            DataSource.DB -> getPostsFromDb()
         }
     }
 

@@ -1,5 +1,6 @@
 package io.tjohander.nonblockingapi.controller
 
+import io.tjohander.nonblockingapi.enum.DataSource
 import io.tjohander.nonblockingapi.model.Post
 import io.tjohander.nonblockingapi.service.PostService
 import org.springframework.beans.factory.annotation.Autowired
@@ -15,10 +16,5 @@ class PostController(
 ) {
 
     @RequestMapping("/")
-    fun getPosts(@RequestParam source: PostSource): Flux<Post> = postService.getPosts(source)
-}
-
-enum class PostSource {
-    DB,
-    API
+    fun getPosts(@RequestParam source: DataSource): Flux<Post> = postService.getPosts(source)
 }

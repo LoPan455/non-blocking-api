@@ -9,7 +9,6 @@ import org.springframework.web.reactive.function.server.RequestPredicates.accept
 import org.springframework.web.reactive.function.server.RouterFunction
 import org.springframework.web.reactive.function.server.RouterFunctions
 import org.springframework.web.reactive.function.server.ServerResponse
-import reactor.core.publisher.Mono
 
 @Configuration
 class PostRouter {
