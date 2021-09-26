@@ -1,6 +1,6 @@
 package io.tjohander.nonblockingapi.router
 
-import io.tjohander.nonblockingapi.handler.PostHandler
+import io.tjohander.nonblockingapi.handler.RandomHandler
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.MediaType
@@ -11,15 +11,15 @@ import org.springframework.web.reactive.function.server.RouterFunctions
 import org.springframework.web.reactive.function.server.ServerResponse
 
 @Configuration
-class PostRouter {
+class RandomRouter {
 
     @Bean
-    fun postsRoute(handler: PostHandler): RouterFunction<ServerResponse> {
+    fun randomRoute(handler: RandomHandler): RouterFunction<ServerResponse> {
         return RouterFunctions
             .route(
-                GET("/posts/")
+                GET("/random/")
                     .and(accept(MediaType.APPLICATION_JSON)),
-                handler::getPosts
+                handler::someLongRunningFunction
             )
     }
 }
